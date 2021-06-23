@@ -11,12 +11,9 @@ public class DataBaseHelper extends SQLiteOpenHelper {
     private final static String BANCO_DE_DADOS = "santander";
     private static int VERSAO = 1;
 
-
-
     public DataBaseHelper(Context context) {
         super(context, BANCO_DE_DADOS, null, VERSAO);
     }
-
 
 
     @Override
