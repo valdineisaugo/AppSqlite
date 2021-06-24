@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "355964301347",
+    "project_id": "valdinei-unifaesp",
+    "storage_bucket": "valdinei-unifaesp.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:355964301347:android:a27199b19f5ecd85034196",
+        "android_client_info": {
+          "package_name": "br.com.saugo"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "355964301347-p9i46q2qdq7c61ccqoc8kap613vhstsc.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBJts8AaL6oUgCZgEGXd2oRSW3h3uTdmuU"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "355964301347-p9i46q2qdq7c61ccqoc8kap613vhstsc.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
