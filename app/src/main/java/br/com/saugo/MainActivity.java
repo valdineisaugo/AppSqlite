@@ -1,6 +1,7 @@
 package br.com.saugo;
 import androidx.appcompat.app.AppCompatActivity;
 import android.content.ContentValues;
+import android.content.Intent;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
@@ -9,8 +10,11 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
 
 import java.util.Date;
 import database.DataBaseHelper;
@@ -58,11 +62,22 @@ public class MainActivity extends AppCompatActivity {
                     Toast.makeText(MainActivity.this, "Registro Salvo", Toast.LENGTH_LONG).show();
                 else
                     Toast.makeText(MainActivity.this, "Falha ao salvar", Toast.LENGTH_LONG).show();
-                //Inserir no FB
+                //Inserir no FireBase
                 DatabaseReference myRef = database.getReference(new Date().toString());
                 myRef.child("nome").setValue(editNome.getText().toString());
                 myRef.child("saldo").setValue(editSaldo.getText().toString());
                 myRef.child("cpf").setValue(editCpf.getText().toString());
+
+                myRef.addValueEventListener(new ValueEventListener() {
+                    @Override
+                    public void onDataChange(DataSnapshot snapshot) {
+                        System.out.println(snapshot.getValue().toString());
+                    }
+
+                    @Override
+                    public void onCancelled(DatabaseError error) {
+                    }
+                });
             }
         });
 
@@ -82,6 +97,12 @@ public class MainActivity extends AppCompatActivity {
             }
         }
 
+    }
+
+    public void consultarDados(View v){
+        //Chamar a segunda tela
+        Intent tela02 = new Intent(this, TelaConsulta.class);
+        startActivity(tela02);
     }
 
 
